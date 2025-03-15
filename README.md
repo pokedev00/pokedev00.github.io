@@ -17,10 +17,10 @@
     - all user information (profile picture, player id, ign, email address)
  
 ## Roles:
-nadine - homepage
-paolo - sign in & sign up page
-erwin - profile page
-francis - online store page
+- nadine - homepage
+- paolo - sign in & sign up page
+- erwin - profile page
+- francis - online store page
 
 ## Notes:
 * You can visit the official Pokemon GO webstore: [Pokemon GO Webstore](https://store.pokemongolive.com).
