@@ -1,1 +1,109 @@
+/* Main Content Styles */
+.main-content {
+    text-align: center;
+    padding: 3rem 0;
+}
 
+.main-title {
+    color: #567E90;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mystery-box-btn,
+.featured-btn {
+    min-width: 200px;
+    padding: 0.8rem 2.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mystery-box-btn {
+    background: transparent;
+    border: 2px solid #567E90;
+    color: #567E90;
+    text-transform: none;
+}
+
+.featured-btn {
+    background: #ED761E;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mystery-box-btn:hover {
+    background: rgba(86, 126, 144, 0.1);
+}
+
+.featured-btn:hover {
+    background: #d66a1b;
+}
+
+/* Mystery Boxes Display */
+.mystery-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    height: 250px;
+    padding: 0 2rem;
+}
+
+.mystery-box-img {
+    height: 230px;
+    width: auto;
+    margin-right: -90px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.mystery-box-img:hover {
+    transform: translateY(-10px);
+}
+
+.mystery-box-img:last-child {
+    margin-right: 0;
+}
+
+/* Optional: Add staggered vertical positioning for more depth */
+.mystery-box-img:nth-child(odd) {
+    transform: translateY(5px);
+}
+
+.mystery-box-img:nth-child(odd):hover {
+    transform: translateY(-10px);
+}
+
+/* Featured Text Styles */
+.featured-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.featured-title {
+    color: #567E90;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-subtitle {
+    color: #567E90;
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
