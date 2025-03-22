@@ -70,3 +70,66 @@
   font-weight: 900;
   font-style: italic;
 }
+
+/* Header Styles */
+.main-header {
+  background-color: #FFFCE9;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* subtle shadow */
+  /* Alternative shadow options you might prefer: */
+  /* box-shadow: 0 2px 8px rgba(86, 126, 144, 0.15); */ /* colored shadow using your theme color */
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */ /* more sophisticated shadow */
+}
+
+/* Logo Styles */
+.logo img {
+  height: 40px;
+}
+
+/* Center Text Styles */
+.center-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #567E90;
+  font-size: 1.1rem;
+  gap: 0.8rem;
+}
+
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.text-with-icon i {
+  font-size: 0.9em;
+}
+
+.center-text .separator {
+  color: #567E90;
+  opacity: 0.5;
+}
+
+/* Icons Styles */
+.header-icons {
+  color: #567E90;
+}
+
+.icon-link {
+  color: #567E90;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.icon-link:last-child {
+  margin-right: 0;
+}
+
+/* Optional hover effects */
+.icon-link:hover {
+  opacity: 0.8;
+}
