@@ -23,6 +23,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/store.css">
+    <style>
+        body {
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/img/store/image-wp.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            opacity: 0.07;
+            z-index: -1;
+            pointer-events: none;
+            min-height: 100vh;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -72,6 +95,58 @@
             <button class="mystery-box-btn">Mystery box  |  P159.00</button>
             <button class="featured-btn">VIEW ALL ITEMS</button>
         </div>
+
+        <section class="item-boxes">
+            <div class="section-header">
+                <h2 class="section-title">Item Boxes</h2>
+            </div>
+            
+            <div class="store-container">
+                <div class="items-grid">
+                    <!-- First row -->
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/1.png" alt="Max Revive">
+                        <h3>Max Revive</h3>
+                        <p class="price">P59.00</p>
+                    </div>
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/2.png" alt="Super Incubator">
+                        <h3>Super Incubator</h3>
+                        <p class="price">P88.00</p>
+                    </div>
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/3.png" alt="Max Mushroom">
+                        <h3>Max Mushroom</h3>
+                        <p class="price">P289.00</p>
+                    </div>
+                    <!-- Second row -->
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/4.png" alt="Max Particle Pack">
+                        <h3>Max Particle Pack</h3>
+                        <p class="price">P235.00</p>
+                    </div>
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/5.png" alt="Premium Battle Pass">
+                        <h3>Premium Battle Pass</h3>
+                        <p class="price">P88.00</p>
+                    </div>
+                    <div class="item-card">
+                        <img src="/assets/img/store/item-boxes/6.png" alt="Egg Incubator">
+                        <h3>Egg Incubator</h3>
+                        <p class="price">P88.00</p>
+                    </div>
+                </div>
+                <div class="mascot-container">
+                    <img src="/assets/img/store/charmander.png" alt="Charmander" class="mascot">
+                </div>
+            </div>
+        </section>
+
+        <section class="pokecoins">
+            <div class="section-header">
+                <h2 class="section-title coins-title">PokéCoins</h2>
+            </div>
+        </section>
     </main>
 
     <script src="/assets/js/store.js"></script>
