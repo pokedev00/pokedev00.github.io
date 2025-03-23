@@ -1,7 +1,8 @@
 /* Main Content Styles */
 .main-content {
     text-align: center;
-    padding: 3rem 0;
+    padding: 6rem 0;
+    position: relative;
 }
 
 .main-title {
@@ -353,4 +354,169 @@ body::before {
     pointer-events: none;
     min-height: 100vh;
     height: 100%;
+}
+
+/* Add Cart Page Styles */
+.overview-title {
+    margin-top: 3rem;
+    color: #567E90;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1.5rem;
+    border: 2px solid #89a5c4;
+    border-radius: 25px;
+    background-color: rgba(245, 240, 205, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.item-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.item-name {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    color: #2B4C7E;
+    font-weight: 600;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #E67E22;
+    padding-left: 1.5rem;
+}
+
+.add-cart-button {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    background-color: #ED761E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 200px;
+}
+
+.add-cart-button:hover {
+    background-color: #d66a1b;
+}
+
+/* Dialog Styles */
+.sale-dialog {
+    padding: 2rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #F5F0CD;
+    width: 90%;
+    max-width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.sale-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #567E90;
+    background-color: white;
+    color: #567E90;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #567E90;
+    color: white;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.dialog-image {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.dialog-title {
+    color: #2B4C7E;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.purchase-button {
+    display: inline-block;
+    background-color: #ED761E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0.8rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+.purchase-button:hover {
+    background-color: #d66a1b;
+    color: white;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #567E90;
+    text-decoration: none;
+    font-size: 1rem;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link i {
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: #ED761E;
 }
