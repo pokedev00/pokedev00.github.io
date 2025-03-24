@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="PokéDev" />
     <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/profile.css">
@@ -53,7 +56,67 @@
         </div>
     </header>
 
-    <!-- add your content here -->
+  <div class="container my-5">
+        <div class="card shadow p-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="pfp.png" alt="Profile Picture" class="rounded-circle border border-warning" width="95" height="95">
+                    <div class="ms-3">
+                        <h2 class="mb-1">Juan Dela Cruz</h2>
+                        <p class="mb-0 text-muted">Level 1</p>
+                        <p class="mb-0 text-muted">Manila, Philippines</p>
+                    </div>
+                </div>
+                <button class="btn btn-warning fw-bold">Sign Out</button>
+            </div>
+        </div>
+
+        <h3 class="mt-4">My Orders</h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-warning text-center">
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Amount</th>
+                        <th>Purchase ID</th>
+                        <th>Purchase Number</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td>12-21-25</td>
+                        <td>Ultra Hatch Box</td>
+                        <td>₱500.56</td>
+                        <td>001</td>
+                        <td>01082324</td>
+                        <td><span class="badge bg-success">Received</span></td>
+                    </tr>
+                    <tr>
+                        <td>12-21-25</td>
+                        <td>Egg Incubator</td>
+                        <td>₱500.56</td>
+                        <td>002</td>
+                        <td>01082325</td>
+                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>12-30-25</td>
+                        <td>Egg Hatcher</td>
+                        <td>₱499.96</td>
+                        <td>003</td>
+                        <td>01082326</td>
+                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
     <h1>Profile</h1>
 
     <footer class="main-footer">
