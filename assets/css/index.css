@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.7);
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8));
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    width: 80%;
+    max-width: 900px;
+}
+
+.tag {
+    background-color: #5bc0de;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin: 10px 0;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.items img {
+    width: 65px;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.items img:hover {
+    transform: scale(1.1);
+}
+
+.price {
+    background-color: #ffc107;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: black;
+    margin-top: 25px;
+    font-size: 1.4em;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.arrows .arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.arrows .arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
