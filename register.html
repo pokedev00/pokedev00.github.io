@@ -20,6 +20,12 @@
             return id;
         }
 
+        function isValidEmail(email) {
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
         function registerUser(event) {
             event.preventDefault();
 
@@ -29,21 +35,24 @@
             const confirmPassword = document.getElementById('confirm-password').value;
 
             if (username === "") {
-                alert("Username required.");
-                return;
-            } else if (email === "") {
-                alert("Email required.");
-                return;
-            } else if (password === "") {
-                alert("Password required.");
-                return;
-            } else if (confirmPassword === "") {
-                alert("Confirm Password required.");
-                return;
-            } else if (password !== confirmPassword) {
-                alert("Passwords don't match. Retype your password.");
-                return;
-            }
+            alert("Username required.");
+            return;
+        } else if (email === "") {
+            alert("Email required.");
+            return;
+        } else if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        } else if (password === "") {
+            alert("Password required.");
+            return;
+        } else if (confirmPassword === "") {
+            alert("Confirm Password required.");
+            return;
+        } else if (password !== confirmPassword) {
+            alert("Passwords don't match. Retype your password.");
+            return;
+        }
 
             const user = {
                 username,
@@ -85,14 +94,17 @@
                 <p class="error" id="errorMessage"></p>
                 <button class="signup-button" onclick="registerUser(event)">Sign Up</button>
             </div>
+           
 
             <div class="right-section">
+                
                 <p class="player-id-text">Player ID:</p>
                 <p id="player-id" class="player-id"></p>
-                <br><br><br><br>
+                
                 <img src="assets/img/brand/logo_500x500.png" alt="Logo" class="logo">
                 <img src="/assets/img/brand/hipookie.webp" alt="Pokémon" class="pokemon-image">
-                <p class="copyright-text">©2025 Pokémon. ©1995 - 2025 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo</p>
+                
+                
             </div>
             
         </div>
