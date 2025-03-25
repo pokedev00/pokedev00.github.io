@@ -1,79 +1,130 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+/* Background Styling */
 body {
-    background: url('') repeat;
-    font-family: Arial, sans-serif;
+    background-color: #f9f3dc; /* Light beige background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    position: relative; /* Allows absolute positioning for Pokémon */
 }
 
-.container {
+
+
+/* Snorlax Image */
+.snorlax {
+    position: absolute;
+    left: 29%;
+    bottom: 22%;
+    width: 300px; /* Increased size */
+}
+
+/* Psyduck Image */
+.psyduck {
+    position: absolute;
+    right: 25%;
+    bottom: 26%;
+    width: 450px; /* Increased size */
+    z-index: 0; /* Behind the login box */
+    transform: scaleX(-1); /* Rotate Psyduck */
+}
+
+/* Login Box */
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 120%;
 }
 
 .login-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 240, 0.95);
+    background-image: url('/assets/img/brand/logo_500x500.png');
+    background-position: top -100px center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 50px;
+    border-radius: 14px;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 370px;
+    border: 5px solid #d97b2f;
+    z-index: 3; /* In front of Psyduck */
 }
 
+/* Logo */
 .logo {
-    width: 150px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #488fc8;
 }
 
-h2 {
-    font-size: 16px;
-    margin-bottom: 20px;
+.logo span {
+    color: #ffcc00;
 }
 
-.input-box {
+/* Input Fields */
+.input-field {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 8px 0;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 16px;
 }
 
-.forgot {
-    display: block;
-    margin-bottom: 10px;
-    color: blue;
-    text-decoration: none;
+/* Text Styling */
+.trouble-text {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.signup-text {
+    margin-top: 15px;
     font-size: 14px;
 }
 
-.login-btn {
+/* Buttons */
+.login-button, .signup-button {
     width: 100%;
     padding: 10px;
-    background-color: green;
-    color: white;
+    border-radius: 6px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+    margin: 5px 0;
 }
 
-.create-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid green;
-    color: green;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+.login-button {
+    background-color: #3b5d72;
+    color: white;
 }
 
-.footer {
-    font-size: 12px;
-    color: gray;
-    margin-top: 10px;
+.signup-button {
+    background-color: #f8e08e;
+    color: #333;
+    border: 1px solid #d97b2f;
+}
+
+.login-button:hover {
+    background-color: #2f4d5e;
+}
+
+.signup-button:hover {
+    background-color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .login-box {
+        width: 90%;
+    }
 }
