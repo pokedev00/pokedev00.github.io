@@ -6,40 +6,97 @@
     <title>PokéDev Sign Up</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
     <link rel="stylesheet" href="/assets/css/register.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("player-id").textContent = generatePlayerID();
+        });
+
+        function generatePlayerID() {
+            let id = "";
+            for (let i = 0; i < 4; i++) {
+                id += Math.floor(1000 + Math.random() * 9000); // Generate a 4-digit random number
+                if (i < 3) id += "-"; // Add hyphen between sections
+            }
+            return id;
+        }
+
+        function registerUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (username === "") {
+                alert("Username required.");
+                return;
+            } else if (email === "") {
+                alert("Email required.");
+                return;
+            } else if (password === "") {
+                alert("Password required.");
+                return;
+            } else if (confirmPassword === "") {
+                alert("Confirm Password required.");
+                return;
+            } else if (password !== confirmPassword) {
+                alert("Passwords don't match. Retype your password.");
+                return;
+            }
+
+            const user = {
+                username,
+                email,
+                password
+            };
+
+            localStorage.setItem('user', JSON.stringify(user));
+            alert(email + "  Thanks for registration. \nTry to login Now");
+
+            document.getElementById('username').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+            document.getElementById('confirm-password').value = "";
+
+            window.location.href = 'login.html';
+        }
+    </script>
 </head>
 <body>
     <div class="signup-container">
         <div class="signup-box">
             <div class="left-section">
                 <h1>Get Started</h1>
-                <p>Already have an account? <a href="#">Sign in</a></p>
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
 
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter your username">
+                <input type="text" id="username" placeholder="Enter your username" required>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
+                <input type="email" id="email" placeholder="Enter your email" required>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
+                <input type="password" id="password" placeholder="Enter your password" required>
 
                 <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" placeholder="Enter your password">
+                <input type="password" id="confirm-password" placeholder="Enter your password" required>
 
-                <button class="signup-button">Sign Up</button>
+                <p class="error" id="errorMessage"></p>
+                <button class="signup-button" onclick="registerUser(event)">Sign Up</button>
             </div>
 
             <div class="right-section">
-              
                 <p class="player-id-text">Player ID:</p>
                 <p id="player-id" class="player-id"></p>
                 <br><br><br><br>
-                <img src="assets/img/brand/logo_500x500.png" alt = "Logo" class = "logo">
+                <img src="assets/img/brand/logo_500x500.png" alt="Logo" class="logo">
                 <img src="/assets/img/brand/hipookie.webp" alt="Pokémon" class="pokemon-image">
+                <p class="copyright-text">©2025 Pokémon. ©1995 - 2025 Nintendo/Creatures Inc./GAME FREAK inc. TM, ®Nintendo</p>
             </div>
+            
         </div>
+        
     </div>
-
-    <script src="/assets/js/register.js"></script>
 </body>
 </html>

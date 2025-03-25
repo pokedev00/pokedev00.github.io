@@ -1,4 +1,3 @@
-// Function to generate random Player ID
 function generatePlayerID() {
     let id = "";
     for (let i = 0; i < 4; i++) {
@@ -7,8 +6,12 @@ function generatePlayerID() {
     }
     return id;
 }
-
-// Set the Player ID when the page loads
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("player-id").textContent = generatePlayerID();
 });
+ 
+
+    
+
+
+

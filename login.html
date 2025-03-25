@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
+<script>
+    function loginUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (!storedUser) {
+                alert("No registered user found. Please sign up first.");
+                return;
+            }
+
+            if (username === storedUser.username && password === storedUser.password) {
+                alert(username + " you are logged in now. Welcome to our website.");
+                // Redirect to the dashboard or home page
+                window.location.href = 'index.html';
+            } else {
+                alert("Invalid email or password.");
+            }
+    
+        }
+</script>
 <body>
 
     <img src="assets/img/brand/pokemon2.png" alt="Snorlax" class="snorlax">
@@ -15,18 +39,14 @@
 
     <div class="login-container">
         <div class="login-box">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br>
             <p>Log in to your PokéDev account</p>
-            <input type="text" placeholder="Username" class="input-field">
-            <input type="password" placeholder="Password" class="input-field">
+            <input type="text" id = "username" placeholder="Username" class="input-field">
+            <input type="password" id = "password" placeholder="Password" class="input-field">
             <p class="trouble-text">Trouble logging in?</p>
-            <button class="login-button">Log in</button>
+            <button class="login-button" onclick= "loginUser(event)">Log in</button>
             <p class="signup-text">Don’t have an account?</p>
-            <button class="signup-button">Create an account</button>
+            <a href = "register.html"><button class="signup-button">Create an account</button>
         </div>
     </div>
 </body>
