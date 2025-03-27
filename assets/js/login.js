@@ -18,5 +18,4 @@ function loginUser(event) {
     } else {
         alert("Invalid username or password.");
     }
-
 }
