@@ -18,104 +18,53 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/register.css">
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="logo">
-            <img src="/assets/img/brand/logo_500x150.png" alt="Logo">
-        </div>
+    <div class="signup-container">
+        <div class="signup-box">
+            <div class="left-section">
+                <h1>Get Started</h1>
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
 
-        <div class="center-text">
-            <span class="text-with-icon">
-                <i class="fas fa-ticket"></i>
-                Code Redemption
-            </span>
-            <span class="separator">|</span>
-            <span class="text-with-icon">
-                <i class="fas fa-store"></i>
-                PokeShop
-            </span>
-        </div>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
 
-        <div class="header-icons">
-            <a href="#" class="icon-link">
-                <i class="fas fa-shopping-cart fa-lg"></i>
-            </a>
-            <a href="#" class="icon-link">
-                <i class="fas fa-user fa-lg"></i>
-            </a>
-        </div>
-    </header>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
 
-    <!-- add your content here -->
-    <h1>Register</h1>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
 
-    <footer class="main-footer">
-        <div class="footer-top">
-            <div class="footer-left">
-                <h3 class="footer-title">PokéDev</h3>
-                <p class="footer-subtitle">Inspired by Pokémon GO Web Store</p>
-                <nav class="footer-nav">
-                    <a href="#">Code Redemption</a>
-                    <a href="/store.html">PokeShop</a>
-                    <a href="https://store.pokemongolive.com/support">Support</a>
-                </nav>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Enter your password" required>
+
+                <p class="error" id="errorMessage"></p>
+                <button class="signup-button" onclick="registerUser(event)">Sign Up</button>
             </div>
-            <a href="#">
-                <div class="footer-right">
-                    <img src="/assets/img/brand/logo_500x150.png" alt="Logo" class="footer-logo">
-                </div>
-            </a>
-        </div>
+           
 
-        <div class="footer-middle">
-            <div class="social-icons">
-                <a href="https://www.youtube.com/@pokemongo"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/PokemonGO/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/pokemongoapp/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@pokemongo"><i class="fab fa-tiktok"></i></a>
+            <div class="right-section">
+                
+                <p class="player-id-text">Player ID:</p>
+                <p id="player-id" class="player-id"></p>
+                
+                <img src="assets/img/brand/logo_500x500.png" alt="Logo" class="logo">
+                <img src="/assets/img/sign_in_up/hipookie.webp" alt="Pokémon" class="pokemon-image">
+                
+                
             </div>
-            <button class="language-selector">
-                <i class="fas fa-globe"></i>
-                English
-            </button>
+            
         </div>
+        
+    </div>    
 
-        <hr class="footer-divider">
-
-        <div class="footer-links">
-            <a href="https://nianticlabs.com/privacy">Privacy Policy</a>
-            <span class="dot-separator">•</span>
-            <a href="https://nianticlabs.com/terms">Terms & Conditions</a>
-            <span class="dot-separator">•</span>
-            <a href="https://nianticlabs.com/copyright">Copyright Policy</a>
-            <span class="dot-separator">•</span>
-            <a href="https://nianticlabs.com/guidelines">Player Guidelines</a>
-        </div>
-
-        <hr class="footer-divider">
-
-        <div class="legal-section">
-            <p class="legal-notice languages">
-                Pokémon GO is playable in English, French, German, Italian, Russian, Japanese, Spanish, Traditional Chinese, Korean, Thai, Brazillian Portuguese, Turkish, and Indonesian.
-            </p>
-
-            <p class="legal-notice copyright">
-                ©2023 Niantic, Inc. ©2023 Pokémon. ©1995–2023 Nintendo / Creatures Inc. / GAME FREAK inc. Pokémon and Pokémon character names are trademarks of Nintendo. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. During gameplay, please be aware of your surroundings and play safely.
-            </p>
-
-            <p class="legal-notice disclaimer">
-                All images are owned by Niantic, Inc. This project is for educational purposes only and no copyright infringement is intended.
-            </p>
-        </div>
-    </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/register.js"></script>
 </body>
 
