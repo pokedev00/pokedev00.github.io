@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
 
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
     <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
@@ -21,11 +26,68 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/profile.css">
+=======
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/profile.css" >
+    
+    <style>
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .pokeball {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to bottom, #ff1a1a 0%, #ff1a1a 50%, #fff 50%, #fff 100%);
+            border-radius: 50%;
+            border: 3px solid #000;
+            animation: spin 1s linear infinite;
+            position: relative;
+        }
+
+        .pokeball::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border: 3px solid #000;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loading-text {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+>>>>>>> Stashed changes
 </head>
 
 <body>
@@ -67,7 +129,11 @@
                         <p class="mb-0 text-muted">Manila, Philippines</p>
                     </div>
                 </div>
+<<<<<<< Updated upstream
                 <button class="btn btn-warning fw-bold">Sign Out</button>
+=======
+                <a href="login.html" class="btn btn-warning fw-bold" id="signOutButton">Sign Out</a>
+>>>>>>> Stashed changes
             </div>
         </div>
 
@@ -114,10 +180,40 @@
         </div>
     </div>
 
+<<<<<<< Updated upstream
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     
     <h1>Profile</h1>
+=======
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="pokeball"></div>
+        <div class="loading-text">Signing Out...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('signOutButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            const button = this;
+            const overlay = document.getElementById('loadingOverlay');
+            
+           
+            button.disabled = true;
+            overlay.style.display = 'flex';
+            
+           
+            const audio = new Audio('https://www.myinstants.com/media/sounds/pokemon-heal.mp3');
+            audio.play().catch(e => console.log('Audio failed to play'));
+            
+            
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+    </script>
+>>>>>>> Stashed changes
 
     <footer class="main-footer">
         <div class="footer-top">
@@ -177,9 +273,11 @@
                 All images are owned by Niantic, Inc. This project is for educational purposes only and no copyright infringement is intended.
             </p>
         </div>
-    </footer>
 
+<<<<<<< Updated upstream
     <script src="/assets/js/profile.js"></script>
+=======
+>>>>>>> Stashed changes
 </body>
 
 </html>
