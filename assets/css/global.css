@@ -79,7 +79,7 @@ body {
 }
 
 /* Header Styles */
-.main-header {
+.main-header-x {
   background-color: #FFFCE9;
   padding: 1rem;
   display: flex;
@@ -92,12 +92,12 @@ body {
 }
 
 /* Logo Styles */
-.logo img {
+.logo-x img {
   height: 40px;
 }
 
 /* Center Text Styles */
-.center-text {
+.center-text-x {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -109,12 +109,12 @@ body {
   transform: translateX(-50%);
 }
 
-.header-link {
+.header-link-x {
   text-decoration: none;
   color: #567E90;
 }
 
-.text-with-icon {
+.text-with-icon-x {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -124,38 +124,38 @@ body {
   font-size: 0.9em;
 }
 
-.center-text .separator {
+.center-text-x .separator-x {
   color: #567E90;
   opacity: 0.5;
 }
 
 /* Icons Styles */
-.header-icons {
+.header-icons-x {
   color: #567E90;
 }
 
-.header-icons .text-with-icon {
+.header-icons-x .text-with-icon-x {
     color: #567E90;
     font-size: 1.1rem;
     text-decoration: none;
 }
 
-.header-icons .icon-link:hover .text-with-icon {
+.header-icons-x .icon-link-x:hover .text-with-icon-x {
     opacity: 0.8;
 }
 
-.icon-link {
+.icon-link-x {
   color: #567E90;
   text-decoration: none;
   margin-right: 20px;
 }
 
-.icon-link:last-child {
+.icon-link-x:last-child {
   margin-right: 0;
 }
 
 /* Optional hover effects */
-.icon-link:hover {
+.icon-link-x:hover {
   opacity: 0.8;
 }
 
