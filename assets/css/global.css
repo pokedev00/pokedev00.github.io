@@ -80,15 +80,19 @@ body {
 
 /* Header Styles */
 .main-header-x {
+  font-family: "Lato", sans-serif;
   background-color: #FFFCE9;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* subtle shadow */
   /* Alternative shadow options you might prefer: */
-  /* box-shadow: 0 2px 8px rgba(86, 126, 144, 0.15); */ /* colored shadow using your theme color */
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */ /* more sophisticated shadow */
+  /* box-shadow: 0 2px 8px rgba(86, 126, 144, 0.15); */
+  /* colored shadow using your theme color */
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
+  /* more sophisticated shadow */
 }
 
 /* Logo Styles */
@@ -135,13 +139,13 @@ body {
 }
 
 .header-icons-x .text-with-icon-x {
-    color: #567E90;
-    font-size: 1.1rem;
-    text-decoration: none;
+  color: #567E90;
+  font-size: 1.1rem;
+  text-decoration: none;
 }
 
 .header-icons-x .icon-link-x:hover .text-with-icon-x {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .icon-link-x {
@@ -161,44 +165,44 @@ body {
 
 /* Footer Styles */
 .main-footer {
-    background-color: #567E90;
-    color: white;
-    padding: 2rem 4rem;
+  background-color: #567E90;
+  color: white;
+  padding: 2rem 4rem;
 }
 
 .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
 .footer-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .footer-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .footer-nav a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.8;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 .footer-nav a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .footer-logo {
-    height: 60px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: opacity 0.2s;
+  height: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 
 .footer-logo:hover {
@@ -206,91 +210,91 @@ body {
 }
 
 .footer-middle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .social-icons {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    opacity: 0.8;
-    transition: opacity 0.2s;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 .social-icons a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .language-selector {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 1.1rem;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.1rem;
 }
 
 .language-selector:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-divider {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1.5rem 0;
 }
 
 .footer-links {
-    text-align: center;
-    margin: 1rem 0;
+  text-align: center;
+  margin: 1rem 0;
 }
 
 .footer-links a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.8;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 .footer-links a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .dot-separator {
-    margin: 0 1rem;
-    opacity: 0.5;
+  margin: 0 1rem;
+  opacity: 0.5;
 }
 
 .footer-subtitle {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
 }
 
 .legal-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .legal-notice {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    line-height: 1.5;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.5;
 }
 
 .legal-notice.disclaimer {
-    font-style: italic;
-    margin-bottom: 3rem;
+  font-style: italic;
+  margin-bottom: 3rem;
 }
