@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!auth.isAuthenticated()) {
         // Redirect to login if not authenticated
         window.location.href = 'login.html';
+        return;
+    }
+
+    // Update profile information
+    const userData = JSON.parse(localStorage.getItem('user') || '{}');
+    if (userData.username) {
+        document.querySelector('.card h2').textContent = userData.username;
+        document.getElementById('player-id').textContent = userData.playerId;
     }
 });
 
@@ -24,6 +32,6 @@ document.getElementById('signOutButton').addEventListener('click', function(even
     
     // Redirect after animation
     setTimeout(() => {
-        window.location.href = 'login.html';
+        window.location.href = '/';
     }, 2000);
 });

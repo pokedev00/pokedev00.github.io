@@ -21,14 +21,31 @@ const auth = {
 
     // Update UI elements based on auth state
     updateUIElements() {
-        const userIcon = document.querySelector('.header-icons .icon-link i');
-        
+        const headerIconsDiv = document.querySelector('.header-icons');
+        if (!headerIconsDiv) return;
+
         if (this.isAuthenticated()) {
-            userIcon?.classList.remove('fa-user');
-            userIcon?.classList.add('fa-user-check');
+            // Get user data from localStorage
+            const userData = JSON.parse(localStorage.getItem('user') || '{}');
+            const username = userData.username || 'Profile';
+
+            headerIconsDiv.innerHTML = `
+                <a href="/profile.html" class="icon-link">
+                    <span class="text-with-icon">
+                        <i class="fas fa-user fa-lg"></i>
+                        ${username}
+                    </span>
+                </a>
+            `;
         } else {
-            userIcon?.classList.remove('fa-user-check');
-            userIcon?.classList.add('fa-user');
+            headerIconsDiv.innerHTML = `
+                <a href="/login.html" class="icon-link">
+                    <span class="text-with-icon">
+                        <i class="fas fa-user fa-lg"></i>
+                        Sign In
+                    </span>
+                </a>
+            `;
         }
     }
 };

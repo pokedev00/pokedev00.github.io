@@ -134,6 +134,16 @@ body {
   color: #567E90;
 }
 
+.header-icons .text-with-icon {
+    color: #567E90;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.header-icons .icon-link:hover .text-with-icon {
+    opacity: 0.8;
+}
+
 .icon-link {
   color: #567E90;
   text-decoration: none;

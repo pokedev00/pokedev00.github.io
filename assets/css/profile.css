@@ -331,10 +331,6 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
 /* Orders Section Styles */
 .container h3 {
     color: #567E90;
@@ -421,12 +417,6 @@
     padding: 0.6rem 1.5rem;
     border-radius: 25px;
     transition: all 0.3s ease;
-}
-
-.btn-warning:hover {
-    background-color: #436778;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(86, 126, 144, 0.2);
 }
 
 /* ---- */
