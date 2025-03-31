@@ -104,6 +104,14 @@ body {
   color: #567E90;
   font-size: 1.1rem;
   gap: 0.8rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-link {
+  text-decoration: none;
+  color: #567E90;
 }
 
 .text-with-icon {

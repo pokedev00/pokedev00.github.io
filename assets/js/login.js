@@ -12,6 +12,8 @@ function loginUser(event) {
     }
 
     if (username === storedUser.username && password === storedUser.password) {
+        // Use the global auth system to sign in
+        auth.signIn();
         alert(username + " you are logged in now. Welcome to our website.");
         // Redirect to the dashboard or home page
         window.location.href = 'index.html';
