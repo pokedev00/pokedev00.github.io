@@ -1,0 +1,179 @@
+body {
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/store/image-wp.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    opacity: 0.07;
+    z-index: -1;
+    pointer-events: none;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.main-content {
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+.main-title {
+    color: #567E90;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.overview-title {
+    margin-top: 3rem;
+    color: #567E90;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1.5rem;
+    border: 2px solid #89a5c4;
+    border-radius: 25px;
+    background-color: rgba(245, 240, 205, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.item-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.item-name {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    color: #2B4C7E;
+    font-weight: 600;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #E67E22;
+    padding-left: 1.5rem;
+}
+
+.redeem-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    background-color: #ED761E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 200px;
+}
+
+.redeem-btn:hover {
+    background-color: #d66a1b;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #567E90;
+    text-decoration: none;
+    font-size: 1rem;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link i {
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: #ED761E;
+}
+
+.purchase-button {
+    display: inline-block;
+    background-color: #ED761E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0.8rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+.purchase-button:hover {
+    background-color: #d66a1b;
+    color: white;
+}
+
+.input-container {
+    max-width: 600px;
+    padding-right: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.code-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #567E90;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.code-input::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.success-placeholder::placeholder {
+    color: #28a745;
+}
+
+.code-input:focus {
+    outline: none;
+    border-color: #ED761E;
+}
+
+.code-note {
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    padding: 0 1.5rem;
+    color: #567E90;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
