@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const redeemButton = document.querySelector('.redeem-btn');
     
     redeemButton.addEventListener('click', function() {
+        // Check if user is authenticated
+        if (!window.auth || !window.auth.isAuthenticated()) {
+            // Use the global dialogManager to show auth error
+            window.dialogManager.showAuthErrorDialog();
+            return;
+        }
+        
         // Get the input element
         const inputX = document.querySelector('.code-input');
         

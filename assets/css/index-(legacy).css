@@ -1,0 +1,303 @@
+body {
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/store/image-wp.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    opacity: 0.07;
+    z-index: -1;
+    pointer-events: none;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 4rem;
+}
+
+.featured-container {
+    padding-bottom: 4rem;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Fixed height for all carousel items */
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Make banner take full height of carousel-item */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the full area while maintaining aspect ratio */
+    display: block;
+    border-radius: 10px;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.35) 20%, transparent 60%);
+    border-radius: 10px;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;  
+    color: white;
+    width: 50%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin: 10px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tag {
+    background-color: #b1f0f7;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    color: #567e90;
+    text-shadow: none;
+    border: none;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.items img {
+    width: 65px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.items img:hover {
+    transform: scale(1.1);
+}
+
+.price {
+    display: inline-block;
+    background-color: #f5f0cd;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.gift-box {
+    position: absolute;
+    bottom: 20%; 
+    left: 15%; 
+    width: 120px; 
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+.featured-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(135, 206, 250, 0.2);
+    border: 4px solid #004080;
+    padding: 20px;
+}
+
+/* Background Image - Lighter Opacity */
+.featured-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 62%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1; /* Reduced opacity for a lighter effect */
+    z-index: 0;
+}
+
+/* Text Content */
+.featured-content {
+    z-index: 1;
+    color: #3e687b;
+    width: 40%;
+    padding: 40px;
+    text-align: left;
+}
+
+.featured-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700; /* Bold text */
+}
+
+.featured-items {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 35%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.item-box {
+    background: rgba(50, 90, 180, 0.6);
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 15px rgba(0, 102, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.item-box img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.item-box:hover {
+    transform: scale(1.05);
+    background: rgba(50, 90, 180, 0.8);
+    box-shadow: 0px 10px 25px rgba(0, 102, 204, 0.5);
+}
+
+.item-box:hover img {
+    transform: scale(1.15);
+}
+
+
+.price-btn {
+    display: inline-block;
+    background-color: #ED761E;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.price-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 127, 80, 0.6);
+}
+
+.featured-title {
+    color: #567E90;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.hanging-bulbasaur {
+    width: 120px;
+    transform: translateX(-3rem);
+}
+
+.container:has(.featured-box) {
+    margin-top: 80px; /* Increased from default */
+}
+
+#carouselExampleIndicators {
+    margin-bottom: 50px; /* Keeps existing margin */
+    align-items: center;
+}
+
+/* Carousel Indicators Styles */
+.carousel-indicators {
+    margin-bottom: 2rem !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    padding: 12px 24px;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    margin: 0 !important;
+    border: none !important;
+    padding: 0 !important;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.3);
+}
+
+.carousel-indicators [data-bs-target]:hover {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    transform: scale(1.1);
+}
+
+.featured-container-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

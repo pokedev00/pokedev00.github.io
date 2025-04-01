@@ -31,8 +31,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120%;
-    margin-top: 80px; /* Add space below the fixed header */
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 .login-box {

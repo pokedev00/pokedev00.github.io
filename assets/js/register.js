@@ -12,9 +12,9 @@ function generatePlayerID() {
 }
 
 function isValidEmail(email) {
-// Regular expression for email validation
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-return emailRegex.test(email);
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function registerUser(event) {
@@ -26,27 +26,29 @@ function registerUser(event) {
     const confirmPassword = document.getElementById('confirm-password').value;
     const playerId = document.getElementById('player-id').textContent;
 
+    // Form validation
     if (username === "") {
-        alert("Username required.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Username required.", false);
         return;
     } else if (email === "") {
-        alert("Email required.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Email required.", false);
         return;
     } else if (!isValidEmail(email)) {
-        alert("Please enter a valid email address.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Please enter a valid email address.", false);
         return;
     } else if (password === "") {
-        alert("Password required.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Password required.", false);
         return;
     } else if (confirmPassword === "") {
-        alert("Confirm Password required.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Confirm Password required.", false);
         return;
     } else if (password !== confirmPassword) {
-        alert("Passwords don't match. Retype your password.");
+        window.dialogManager.showAuthErrorDialog("Registration Error", "Passwords don't match. Retype your password.", false);
         return;
     }
 
-    const user = {
+    // Create user data object
+    const userData = {
         username,
         email,
         password,
@@ -54,20 +56,28 @@ function registerUser(event) {
         registrationDate: new Date().toISOString()
     };
 
-    // Store user data
-    localStorage.setItem('user', JSON.stringify(user));
+    // Register the user
+    const result = auth.registerUser(userData);
     
-    // Sign in the user immediately after registration
-    auth.signIn();
-    
-    alert(email + "  Thanks for registration. You are now logged in!");
+    if (!result.success) {
+        window.dialogManager.showAuthErrorDialog("Registration Error", result.message, false);
+        return;
+    }
 
+    // Sign in the user immediately after registration
+    auth.signIn(username, result.userId);
+    
     // Clear the form
     document.getElementById('username').value = "";
     document.getElementById('email').value = "";
     document.getElementById('password').value = "";
     document.getElementById('confirm-password').value = "";
 
-    // Redirect to home page since user is already logged in
-    window.location.href = 'index.html';
+    // Show success dialog and redirect after a delay
+    window.dialogManager.showSuccessDialog('Registration Successful', 'Your account has been created successfully!');
+    
+    // Redirect to home page after dialog is shown
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 2000);
 }

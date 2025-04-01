@@ -6,11 +6,25 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Update profile information
-    const userData = JSON.parse(localStorage.getItem('user') || '{}');
-    if (userData.username) {
+    // Get the complete user data using the new helper method
+    const userData = auth.getCurrentUser();
+    
+    if (userData) {
+        // Update profile information
         document.querySelector('.card h2').textContent = userData.username;
-        document.getElementById('player-id').textContent = userData.playerId;
+        document.getElementById('player-id').textContent = userData.playerId || 'No Player ID';
+        
+        // Update email if available (3rd text-muted paragraph)
+        const textMutedElements = document.querySelectorAll('.card .text-muted');
+        if (textMutedElements.length >= 3 && userData.email) {
+            textMutedElements[2].textContent = userData.email;
+        }
+        
+        // If there's more user info you want to display, add it here
+    } else {
+        console.error('Failed to retrieve user data');
+        // Optionally redirect to login if user data can't be found
+        // window.location.href = 'login.html';
     }
 });
 

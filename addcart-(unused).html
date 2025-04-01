@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeShop</title>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PokéDev" />
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <header class="main-header-x">
+        <div class="logo-x">
+            <a href="/">
+                <img src="/assets/img/brand/logo_500x150.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="center-text-x">
+            <a class="header-link-x" href="/code.html">
+                <span class="text-with-icon-x">
+                    <i class="fas fa-ticket"></i>
+                    Code Redemption
+                </span>
+            </a>
+            
+            <span class="separator-x">|</span>
+
+            <a class="header-link-x" href="/store.html">
+                <span class="text-with-icon-x">
+                    <i class="fas fa-store"></i>
+                    PokéShop
+                </span>
+            </a>
+        </div>
+
+        <div class="header-icons-x">
+            <a href="/profile.html" class="icon-link-x">
+                <i class="fas fa-user fa-lg"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <a href="/store.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Store
+        </a>
+
+        <div class="checkout-page" style="transition: display 0.3s ease-in-out;">
+            <h2 class="overview-title">Cart</h2>
+    
+            <div class="item-container">
+                <img src="/assets/img/items/placeholder.png" alt="Item Image" class="item-image">
+                <span class="item-name">Item Name</span>
+                <span class="item-price">100</span>
+            </div>
+    
+            <button class="add-cart-button" onclick="showPaymentContainer()">Checkout</button>
+        </div>
+
+        <div class="container mt-5 payment-container" style="display: none;">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="overview-title">Payment Details</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="paymentForm" onsubmit="handlePaymentSubmit(event)">
+                                <!-- Card Holder Name -->
+                                <div class="mb-3">
+                                    <label for="cardName" class="form-label">Card Holder Name</label>
+                                    <input type="text" class="form-control" id="cardName" placeholder="Name on card">
+                                </div>
+
+                                <!-- Card Number -->
+                                <div class="mb-3">
+                                    <label for="cardNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber"
+                                        placeholder="1234 5678 9012 3456">
+                                </div>
+
+                                <div class="row">
+                                    <!-- Expiration Date -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="expiration" class="form-label">Expiration Date</label>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <select class="form-select" id="expMonth">
+                                                    <option value="">Month</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <!-- Add more months -->
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="form-select" id="expYear">
+                                                    <option value="">Year</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <!-- Add more years -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CVV -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" placeholder="123">
+                                    </div>
+                                </div>
+
+                                <!-- Billing Address -->
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Billing Address</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Street address">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="city" placeholder="City">
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <select class="form-select" id="state">
+                                            <option value="">State</option>
+                                            <!-- Add states -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <input type="text" class="form-control" id="zip" placeholder="Zip">
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" class="btn btn-primary w-100">Pay Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 success-container" style="display: none;">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body text-center" style="padding: 3rem 1rem;">
+                            <i class="fas fa-check-circle text-success" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <h2 class="overview-title">Purchase Successful!</h2>
+                            <p>Thank you for your purchase! Your order has been confirmed.</p>
+                            <a href="/store.html" class="purchase-button">Return to Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                <h3 class="footer-title">PokéDev</h3>
+                <p class="footer-subtitle">Inspired by Pokémon GO Web Store</p>
+                <nav class="footer-nav">
+                    <a href="/code.html">Code Redemption</a>
+                    <a href="/store.html">PokeShop</a>
+                    <a href="https://store.pokemongolive.com/support">Support</a>
+                </nav>
+            </div>
+            <a href="#">
+                <div class="footer-right">
+                    <img src="/assets/img/brand/logo_500x150.png" alt="Logo" class="footer-logo">
+                </div>
+            </a>
+        </div>
+
+        <div class="footer-middle">
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@pokemongo"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/PokemonGO/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/pokemongoapp/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@pokemongo"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <button class="language-selector">
+                <i class="fas fa-globe"></i>
+                English
+            </button>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-links">
+            <a href="https://nianticlabs.com/privacy">Privacy Policy</a>
+            <span class="dot-separator">•</span>
+            <a href="https://nianticlabs.com/terms">Terms & Conditions</a>
+            <span class="dot-separator">•</span>
+            <a href="https://nianticlabs.com/copyright">Copyright Policy</a>
+            <span class="dot-separator">•</span>
+            <a href="https://nianticlabs.com/guidelines">Player Guidelines</a>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="legal-section">
+            <p class="legal-notice languages">
+                Pokémon GO is playable in English, French, German, Italian, Russian, Japanese, Spanish, Traditional
+                Chinese, Korean, Thai, Brazillian Portuguese, Turkish, and Indonesian.
+            </p>
+
+            <p class="legal-notice copyright">
+                ©2023 Niantic, Inc. ©2023 Pokémon. ©1995–2023 Nintendo / Creatures Inc. / GAME FREAK inc. Pokémon and
+                Pokémon character names are trademarks of Nintendo. Apple and the Apple logo are trademarks of Apple
+                Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Android,
+                Google Play and the Google Play logo are trademarks of Google LLC. During gameplay, please be aware of
+                your surroundings and play safely.
+            </p>
+
+            <p class="legal-notice disclaimer">
+                All images are owned by Niantic, Inc. This project is for educational purposes only and no copyright
+                infringement is intended.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/addcart.js"></script>
+</body>
+
+</html>

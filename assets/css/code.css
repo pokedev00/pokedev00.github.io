@@ -177,3 +177,101 @@ body::before {
     font-size: 0.9rem;
     line-height: 1.5;
 }
+
+/* Error Dialog Styles */
+.error-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-dialog.show {
+    opacity: 1;
+}
+
+.error-dialog-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.error-dialog.show .error-dialog-content {
+    transform: translateY(0);
+}
+
+.error-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #dc3545;
+}
+
+.error-header i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.error-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.error-dialog p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.error-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.error-cancel-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+.error-cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.error-signin-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #ED761E;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.error-signin-btn:hover {
+    background-color: #d66a1b;
+}

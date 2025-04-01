@@ -19,8 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 80px; /* Add space below fixed header */
+    padding: 40px;
     box-sizing: border-box;
 }
 

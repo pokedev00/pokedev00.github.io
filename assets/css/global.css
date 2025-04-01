@@ -298,3 +298,123 @@ body {
   font-style: italic;
   margin-bottom: 3rem;
 }
+
+/* Dialog Styles - Generic */
+.dialog.error-dialog,
+.dialog.success-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dialog.error-dialog.show,
+.dialog.success-dialog.show {
+    opacity: 1;
+}
+
+.dialog.error-dialog .dialog-content,
+.dialog.success-dialog .dialog-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.dialog.error-dialog.show .dialog-content,
+.dialog.success-dialog.show .dialog-content {
+    transform: translateY(0);
+}
+
+.dialog.error-dialog .dialog-header,
+.dialog.success-dialog .dialog-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dialog.error-dialog .dialog-header i,
+.dialog.success-dialog .dialog-header i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.dialog.error-dialog .dialog-header h3,
+.dialog.success-dialog .dialog-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.dialog.error-dialog p,
+.dialog.success-dialog p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.dialog.error-dialog .dialog-buttons,
+.dialog.success-dialog .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.dialog.error-dialog .dialog-cancel-btn,
+.dialog.success-dialog .dialog-cancel-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+.dialog.error-dialog .dialog-cancel-btn:hover,
+.dialog.success-dialog .dialog-cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.dialog.error-dialog .dialog-action-btn,
+.dialog.success-dialog .dialog-action-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #ED761E;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.dialog.error-dialog .dialog-action-btn:hover,
+.dialog.success-dialog .dialog-action-btn:hover {
+    background-color: #d66a1b;
+}
+
+/* Error Dialog Specific Styles */
+.dialog.error-dialog .error-header {
+    color: #dc3545;
+}
+
+/* Success Dialog Specific Styles */
+.dialog.success-dialog .success-header {
+    color: #28a745;
+}
