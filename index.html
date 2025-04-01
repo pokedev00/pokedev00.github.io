@@ -306,6 +306,39 @@
         </div>
     </dialog>
 
+    <!-- Floating Cart Button -->
+    <div class="cart-button" id="cartButton">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Sliding Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2><span id="cartUsername">My</span> Cart <span id="cartTotalItems">(0)</span></h2>
+            <button class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>SUBTOTAL:</span>
+                <span class="subtotal-amount" id="subtotalAmount">₱0.00</span>
+            </div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" id="clearCartBtn">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="main-footer">
         <div class="footer-top">
             <div class="footer-left">
