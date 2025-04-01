@@ -296,11 +296,22 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         showSlide(index) {
-            this.slides.forEach(slide => slide.classList.remove('active'));
+            const direction = index > this.currentSlideIndex ? 1 : -1;
+            
+            const currentSlide = this.slides[this.currentSlideIndex];
+            
+            this.slides.forEach(slide => {
+                slide.classList.remove('active', 'prev');
+            });
+            
             this.dots.forEach(dot => dot.classList.remove('active'));
-
-            this.slides[index].classList.add('active');
             this.dots[index].classList.add('active');
+            
+            if (direction < 0) {
+                currentSlide.classList.add('prev');
+            }
+            
+            this.slides[index].classList.add('active');
             this.currentSlideIndex = index;
         },
 

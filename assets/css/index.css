@@ -16,18 +16,31 @@
 }
 
 .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-slide {
     min-width: 100%;
-    display: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
     display: block;
+}
+
+.carousel-slide.prev {
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .carousel-slide img {
