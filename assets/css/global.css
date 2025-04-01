@@ -78,7 +78,6 @@ body {
   font-style: italic;
 }
 
-/* Header Styles */
 .main-header-x {
   font-family: "Lato", sans-serif;
   background-color: #FFFCE9;
@@ -87,20 +86,12 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* subtle shadow */
-  /* Alternative shadow options you might prefer: */
-  /* box-shadow: 0 2px 8px rgba(86, 126, 144, 0.15); */
-  /* colored shadow using your theme color */
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
-  /* more sophisticated shadow */
 }
 
-/* Logo Styles */
 .logo-x img {
   height: 40px;
 }
 
-/* Center Text Styles */
 .center-text-x {
   display: flex;
   flex-direction: row;

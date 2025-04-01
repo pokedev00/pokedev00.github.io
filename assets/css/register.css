@@ -1,11 +1,9 @@
-/* Background */
 body {
     background-color: #f9f3dc;
     min-height: 100vh;
     position: relative;
 }
 
-/* Header fix */
 .main-header {
     position: fixed;
     top: 0;
@@ -14,7 +12,6 @@ body {
     z-index: 1000;
 }
 
-/* Sign-up Box */
 .signup-container {
     display: flex;
     justify-content: center;
@@ -35,7 +32,6 @@ body {
     border: 5px solid #d97b2f;
 }
 
-/* Left Section */
 .left-section {
     width: 50%;
 }
@@ -88,7 +84,6 @@ input {
     background-color: #2f4d5e;
 }
 
-/* Right Section */
 .right-section {
     width: 45%;
     text-align: center;
@@ -97,7 +92,7 @@ input {
 .player-id-text {
     font-size: 14px;
     color: #555;
-    margin-top: 55px; /* Adjust the margin to move it higher */
+    margin-top: 55px;
     text-align: left;
 }
 
@@ -110,15 +105,14 @@ input {
 
 .pokemon-image {
     width: 100%;
-    margin-top: -90px; /* Adjust the margin to position it closer to the logo */
+    margin-top: -90px;
 }
 
 .logo {
-    width: 60%; /* Adjust the width as needed */
-    margin-top: -50px; /* Adjust the margin to position it closer to the pokemon-image */
+    width: 60%;
+    margin-top: -50px;
 }
 
-/* Responsive Design */
 @media (max-width: 750px) {
     .signup-box {
         flex-direction: column;

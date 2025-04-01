@@ -5,14 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function generatePlayerID() {
     let id = "";
     for (let i = 0; i < 4; i++) {
-        id += Math.floor(1000 + Math.random() * 9000); // Generate a 4-digit random number
-        if (i < 3) id += "-"; // Add hyphen between sections
+        id += Math.floor(1000 + Math.random() * 9000);
+        if (i < 3) id += "-";
     }
     return id;
 }
 
 function isValidEmail(email) {
-    // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
@@ -26,7 +25,6 @@ function registerUser(event) {
     const confirmPassword = document.getElementById('confirm-password').value;
     const playerId = document.getElementById('player-id').textContent;
 
-    // Form validation
     if (username === "") {
         window.dialogManager.showAuthErrorDialog("Registration Error", "Username required.", false);
         return;
@@ -47,7 +45,6 @@ function registerUser(event) {
         return;
     }
 
-    // Create user data object
     const userData = {
         username,
         email,
@@ -56,7 +53,6 @@ function registerUser(event) {
         registrationDate: new Date().toISOString()
     };
 
-    // Register the user
     const result = auth.registerUser(userData);
     
     if (!result.success) {
@@ -64,19 +60,15 @@ function registerUser(event) {
         return;
     }
 
-    // Sign in the user immediately after registration
     auth.signIn(username, result.userId);
     
-    // Clear the form
     document.getElementById('username').value = "";
     document.getElementById('email').value = "";
     document.getElementById('password').value = "";
     document.getElementById('confirm-password').value = "";
 
-    // Show success dialog and redirect after a delay
     window.dialogManager.showSuccessDialog('Registration Successful', 'Your account has been created successfully!');
     
-    // Redirect to home page after dialog is shown
     setTimeout(() => {
         window.location.href = 'index.html';
     }, 2000);

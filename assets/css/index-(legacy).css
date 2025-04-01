@@ -33,19 +33,19 @@ body::before {
 .carousel-item {
     position: relative;
     width: 100%;
-    height: 500px; /* Fixed height for all carousel items */
+    height: 500px;
 }
 
 .banner {
     position: relative;
     width: 100%;
-    height: 100%; /* Make banner take full height of carousel-item */
+    height: 100%;
 }
 
 .banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure images cover the full area while maintaining aspect ratio */
+    object-fit: cover;
     display: block;
     border-radius: 10px;
 }
@@ -146,7 +146,6 @@ h1 {
     padding: 20px;
 }
 
-/* Background Image - Lighter Opacity */
 .featured-background {
     position: absolute;
     top: 0;
@@ -154,11 +153,10 @@ h1 {
     width: 62%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.1; /* Reduced opacity for a lighter effect */
+    opacity: 0.1;
     z-index: 0;
 }
 
-/* Text Content */
 .featured-content {
     z-index: 1;
     color: #3e687b;
@@ -171,7 +169,7 @@ h1 {
     font-size: 3.2rem;
     line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 700; /* Bold text */
+    font-weight: 700;
 }
 
 .featured-items {
@@ -251,15 +249,14 @@ h1 {
 }
 
 .container:has(.featured-box) {
-    margin-top: 80px; /* Increased from default */
+    margin-top: 80px;
 }
 
 #carouselExampleIndicators {
-    margin-bottom: 50px; /* Keeps existing margin */
+    margin-bottom: 50px;
     align-items: center;
 }
 
-/* Carousel Indicators Styles */
 .carousel-indicators {
     margin-bottom: 2rem !important;
     background-color: rgba(0, 0, 0, 0.3);

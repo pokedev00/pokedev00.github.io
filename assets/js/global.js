@@ -1,19 +1,15 @@
-// Simple auth state management
 const AUTH_KEY = 'isAuthenticated';
 const USERS_KEY = 'users';
 const CURRENT_USER_KEY = 'currentUser';
 
 const auth = {
-    // Check if user is authenticated
     isAuthenticated() {
         return localStorage.getItem(AUTH_KEY) === 'true';
     },
 
-    // Sign in user
     signIn(username = '', userId = null) {
         localStorage.setItem(AUTH_KEY, 'true');
         
-        // Store current user info
         if (username) {
             const currentUser = { username, userId };
             localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(currentUser));
@@ -21,23 +17,18 @@ const auth = {
         
         this.updateUIElements();
         
-        // Show success dialog
         dialogManager.showSuccessDialog('Login Successful', 'You have successfully signed in!');
     },
 
-    // Sign out user
     signOut() {
         localStorage.removeItem(AUTH_KEY);
         localStorage.removeItem(CURRENT_USER_KEY);
         this.updateUIElements();
     },
 
-    // Register a new user
     registerUser(userData) {
-        // Get existing users or initialize empty array
         const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
         
-        // Check if username or email already exists
         const userExists = users.some(user => 
             user.username === userData.username || 
             user.email === userData.email
@@ -50,13 +41,10 @@ const auth = {
             };
         }
         
-        // Add userId to the user data
         userData.userId = this.generateUserId();
         
-        // Add the new user
         users.push(userData);
         
-        // Save to localStorage
         localStorage.setItem(USERS_KEY, JSON.stringify(users));
         
         return {
@@ -65,7 +53,6 @@ const auth = {
         };
     },
     
-    // Find user by credentials
     findUserByCredentials(username, password) {
         const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
         return users.find(user => 
@@ -74,7 +61,6 @@ const auth = {
         );
     },
     
-    // Get current user data
     getCurrentUser() {
         if (!this.isAuthenticated()) return null;
         
@@ -85,18 +71,15 @@ const auth = {
         return users.find(user => user.userId === currentUser.userId) || null;
     },
     
-    // Generate a unique user ID
     generateUserId() {
         return 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     },
 
-    // Update UI elements based on auth state
     updateUIElements() {
         const headerIconsDiv = document.querySelector('.header-icons-x');
         if (!headerIconsDiv) return;
 
         if (this.isAuthenticated()) {
-            // Get current user data from localStorage
             const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER_KEY) || '{}');
             const username = currentUser.username || 'Profile';
 
@@ -121,18 +104,13 @@ const auth = {
     }
 };
 
-// Dialog manager for all types of dialogs
 const dialogManager = {
-    // Show auth error dialog
     showAuthErrorDialog(title = 'Sign In Required', message = 'You need to be signed in to redeem codes.', showSignInButton = true) {
-        // Remove any existing dialogs
         this.removeExistingDialogs();
         
-        // Create the error dialog
         const dialog = document.createElement('div');
         dialog.className = 'dialog error-dialog';
         
-        // Prepare buttons HTML based on showSignInButton flag
         let buttonsHtml = '';
         if (showSignInButton) {
             buttonsHtml = `
@@ -160,22 +138,16 @@ const dialogManager = {
             </div>
         `;
         
-        // Add to the document
         document.body.appendChild(dialog);
         
-        // Show the dialog with animation
         this.showDialogWithAnimation(dialog);
         
-        // Setup event listeners
         this.setupDialogEventListeners(dialog);
     },
     
-    // Show success dialog
     showSuccessDialog(title = 'Success', message = 'Operation completed successfully') {
-        // Remove any existing dialogs
         this.removeExistingDialogs();
         
-        // Create the success dialog
         const dialog = document.createElement('div');
         dialog.className = 'dialog success-dialog';
         dialog.innerHTML = `
@@ -191,16 +163,12 @@ const dialogManager = {
             </div>
         `;
         
-        // Add to the document
         document.body.appendChild(dialog);
         
-        // Show the dialog with animation
         this.showDialogWithAnimation(dialog);
         
-        // Setup event listeners
         this.setupDialogEventListeners(dialog);
         
-        // Auto close after 3 seconds
         setTimeout(() => {
             if (document.body.contains(dialog)) {
                 dialog.classList.remove('show');
@@ -213,22 +181,18 @@ const dialogManager = {
         }, 3000);
     },
     
-    // Helper method to remove any existing dialogs
     removeExistingDialogs() {
         const existingDialogs = document.querySelectorAll('.dialog');
         existingDialogs.forEach(dialog => dialog.remove());
     },
     
-    // Helper method to show dialog with animation
     showDialogWithAnimation(dialog) {
         setTimeout(() => {
             dialog.classList.add('show');
         }, 10);
     },
     
-    // Helper method to setup dialog event listeners
     setupDialogEventListeners(dialog) {
-        // Handle cancel button if it exists
         const cancelBtn = dialog.querySelector('.dialog-cancel-btn');
         if (cancelBtn) {
             cancelBtn.addEventListener('click', () => {
@@ -239,7 +203,6 @@ const dialogManager = {
             });
         }
         
-        // Handle action button if it's not a link
         const actionBtn = dialog.querySelector('.dialog-action-btn:not(a)');
         if (actionBtn) {
             actionBtn.addEventListener('click', () => {
@@ -250,7 +213,6 @@ const dialogManager = {
             });
         }
         
-        // Close when clicking outside the dialog
         dialog.addEventListener('click', (e) => {
             if (e.target === dialog) {
                 dialog.classList.remove('show');
@@ -262,25 +224,20 @@ const dialogManager = {
     }
 };
 
-// Update UI when page loads
 document.addEventListener('DOMContentLoaded', () => {
     auth.updateUIElements();
     
-    // Check URL params for success messages
     const urlParams = new URLSearchParams(window.location.search);
     const action = urlParams.get('action');
     
     if (action === 'login_success') {
         dialogManager.showSuccessDialog('Login Successful', 'You have successfully signed in!');
-        // Clean URL after showing dialog
         window.history.replaceState({}, document.title, window.location.pathname);
     } else if (action === 'register_success') {
         dialogManager.showSuccessDialog('Registration Successful', 'Your account has been created successfully!');
-        // Clean URL after showing dialog
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 });
 
-// Export the objects for use in other files
 window.auth = auth;
 window.dialogManager = dialogManager;

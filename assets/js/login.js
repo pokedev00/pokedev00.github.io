@@ -4,7 +4,6 @@ function loginUser(event) {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     
-    // Validate form inputs
     if (!username) {
         window.dialogManager.showAuthErrorDialog("Login Error", "Username required.", false);
         return;
@@ -13,7 +12,6 @@ function loginUser(event) {
         return;
     }
 
-    // Find user with matching credentials
     const user = auth.findUserByCredentials(username, password);
 
     if (!user) {
@@ -21,10 +19,8 @@ function loginUser(event) {
         return;
     }
 
-    // Sign in the user with username and userId
     auth.signIn(username, user.userId);
     
-    // Redirect to the dashboard or home page after a short delay
     setTimeout(() => {
         window.location.href = 'index.html';
     }, 1500);

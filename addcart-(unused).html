@@ -87,13 +87,11 @@
                         </div>
                         <div class="card-body">
                             <form id="paymentForm" onsubmit="handlePaymentSubmit(event)">
-                                <!-- Card Holder Name -->
                                 <div class="mb-3">
                                     <label for="cardName" class="form-label">Card Holder Name</label>
                                     <input type="text" class="form-control" id="cardName" placeholder="Name on card">
                                 </div>
 
-                                <!-- Card Number -->
                                 <div class="mb-3">
                                     <label for="cardNumber" class="form-label">Card Number</label>
                                     <input type="text" class="form-control" id="cardNumber"
@@ -101,7 +99,6 @@
                                 </div>
 
                                 <div class="row">
-                                    <!-- Expiration Date -->
                                     <div class="col-md-6 mb-3">
                                         <label for="expiration" class="form-label">Expiration Date</label>
                                         <div class="row">
@@ -110,7 +107,6 @@
                                                     <option value="">Month</option>
                                                     <option value="01">01</option>
                                                     <option value="02">02</option>
-                                                    <!-- Add more months -->
                                                 </select>
                                             </div>
                                             <div class="col-6">
@@ -118,20 +114,17 @@
                                                     <option value="">Year</option>
                                                     <option value="2024">2024</option>
                                                     <option value="2025">2025</option>
-                                                    <!-- Add more years -->
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- CVV -->
                                     <div class="col-md-6 mb-3">
                                         <label for="cvv" class="form-label">CVV</label>
                                         <input type="text" class="form-control" id="cvv" placeholder="123">
                                     </div>
                                 </div>
 
-                                <!-- Billing Address -->
                                 <div class="mb-3">
                                     <label for="address" class="form-label">Billing Address</label>
                                     <input type="text" class="form-control" id="address" placeholder="Street address">
@@ -144,7 +137,6 @@
                                     <div class="col-md-3 mb-3">
                                         <select class="form-select" id="state">
                                             <option value="">State</option>
-                                            <!-- Add states -->
                                         </select>
                                     </div>
                                     <div class="col-md-3 mb-3">
@@ -152,7 +144,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Submit Button -->
                                 <button type="submit" class="btn btn-primary w-100">Pay Now</button>
                             </form>
                         </div>
