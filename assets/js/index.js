@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add to document
         document.body.appendChild(toast);
         
-        // Trigger animation
+        // Trigger animation with a small delay
         setTimeout(() => {
             toast.classList.add('show');
         }, 10);
